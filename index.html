@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>EquiMatch – Stallion Matching Platform (MVP)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Top bar -->
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="#top">
+        <span class="logoMark"></span>
+        <span class="brandText">EquiMatch</span>
+        <span class="badge">MVP</span>
+      </a>
+
+      <nav class="topnav">
+        <a href="#how">How it works</a>
+        <a href="#forwho">For breeders</a>
+        <a href="#pricing">Pricing</a>
+        <button class="btn secondary" id="ctaOpenAppTop" type="button">Open demo</button>
+      </nav>
+
+      <div class="authMini" id="authMini"></div>
+    </div>
+  </header>
+
+  <!-- LANDING -->
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1>European stallion matching — <span class="accent">simplified</span>.</h1>
+          <p class="lead">
+            A modern decision-support tool to filter, shortlist and compare stallions — and (later) add advanced matching & genetics as premium features.
+          </p>
+
+          <div class="hero-cta">
+            <button class="btn" id="ctaCreateAccount" type="button">Create free account</button>
+            <button class="btn secondary" id="ctaOpenApp" type="button">Open demo</button>
+          </div>
+
+          <p class="muted small">
+            Stoägare kan skapa profil och lägga in ston gratis. Hingstägare kan senare betala för synlighet + leads.
+          </p>
+
+          <div class="trustRow">
+            <div class="trustItem">
+              <div class="trustTitle">Catalog</div>
+              <div class="muted small">Filter by discipline, region, semen, index, height.</div>
+            </div>
+            <div class="trustItem">
+              <div class="trustTitle">Match</div>
+              <div class="muted small">Shortlist built around a selected mare (formula later).</div>
+            </div>
+            <div class="trustItem">
+              <div class="trustTitle">Premium</div>
+              <div class="muted small">Genetics + deeper scoring (coming soon).</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-card-top">
+            <div class="pill">Demo preview</div>
+            <div class="pill ghost">20 demo stallions</div>
+          </div>
+
+          <div class="mock">
+            <div class="mockRow">
+              <div class="mockLabel">Discipline</div>
+              <div class="mockChip">Jumping</div>
+              <div class="mockChip">Dressage</div>
+              <div class="mockChip">Eventing</div>
+            </div>
+            <div class="mockRow">
+              <div class="mockLabel">Region</div>
+              <div class="mockChip">SE</div>
+              <div class="mockChip">EU</div>
+              <div class="mockChip">INT</div>
+            </div>
+            <div class="mockRow">
+              <div class="mockLabel">Height</div>
+              <div class="mockChip">Min 165</div>
+              <div class="mockChip">Max 175</div>
+            </div>
+
+            <div class="mockList">
+              <div class="mockItem">
+                <div class="mockName">Nordic Legend</div>
+                <div class="mockMeta muted small">SWB · Jumping · Index 147 · 170 cm</div>
+              </div>
+              <div class="mockItem">
+                <div class="mockName">Cornet Skyline</div>
+                <div class="mockMeta muted small">HOLST · Jumping · 1.50m · Frozen</div>
+              </div>
+              <div class="mockItem">
+                <div class="mockName">Quiet Rebel</div>
+                <div class="mockMeta muted small">KWPN · Dressage · MSV A</div>
+              </div>
+            </div>
+
+            <button class="btn full" id="ctaOpenAppCard" type="button">Try the demo</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="how">
+      <div class="container">
+        <h2>How it works</h2>
+        <div class="cards3">
+          <div class="card">
+            <h3>1) Create a profile</h3>
+            <p class="muted">Stoägare: add mares for free. Hingstägare: later pay for visibility + leads.</p>
+          </div>
+          <div class="card">
+            <h3>2) Use as a catalog</h3>
+            <p class="muted">Filter by discipline, semen type, region, index, 3-year test and height interval.</p>
+          </div>
+          <div class="card">
+            <h3>3) Build a shortlist</h3>
+            <p class="muted">Switch to Match mode to shortlist around a selected mare (scoring formula later).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="forwho">
+      <div class="container">
+        <h2>Built for two user types</h2>
+
+        <div class="split">
+          <div class="card">
+            <div class="pill">Mare owners</div>
+            <h3>Free profile + mare library</h3>
+            <ul class="list">
+              <li>Add multiple mares</li>
+              <li>Catalog filtering</li>
+              <li>Match shortlist (MVP)</li>
+              <li>Save mare 3-year test details (not used yet)</li>
+            </ul>
+            <button class="btn" id="ctaCreateAccount2" type="button">Create free account</button>
+          </div>
+
+          <div class="card">
+            <div class="pill ghost">Stallion owners</div>
+            <h3>Paid visibility + leads (future)</h3>
+            <ul class="list">
+              <li>Pay to appear in catalog & match</li>
+              <li>Featured placement</li>
+              <li>Lead inbox + analytics</li>
+              <li>Semen availability updates</li>
+            </ul>
+            <button class="btn secondary" id="ctaOpenApp2" type="button">View demo</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="pricing">
+      <div class="container">
+        <h2>Pricing (concept)</h2>
+        <p class="muted">Pricing is placeholder for your school project — just to show the business model.</p>
+
+        <div class="cards3">
+          <div class="card">
+            <div class="pill">Free</div>
+            <h3>Breeders</h3>
+            <p class="muted">Mare profiles + catalog filters + basic shortlist.</p>
+          </div>
+          <div class="card">
+            <div class="pill ghost">Pro</div>
+            <h3>Premium breeder</h3>
+            <p class="muted">Advanced filters + saved shortlists + export reports.</p>
+          </div>
+          <div class="card">
+            <div class="pill ghost">Stud Farm</div>
+            <h3>Stallion owner</h3>
+            <p class="muted">Visibility, featured listings, lead tools & analytics.</p>
+          </div>
+        </div>
+
+        <div class="ctaRow">
+          <button class="btn" id="ctaCreateAccount3" type="button">Create account</button>
+          <button class="btn secondary" id="ctaOpenApp3" type="button">Open demo</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- APP SECTION -->
+    <section class="app" id="app">
+      <div class="container app-head">
+        <div>
+          <h2>Demo app</h2>
+          <p class="muted small">Resultat visas först när du klickar “Uppdatera resultat”.</p>
+        </div>
+
+        <div class="tabs">
+          <button class="tab active" id="tabCatalog" type="button">Catalog</button>
+          <button class="tab" id="tabMatch" type="button">Match</button>
+        </div>
+      </div>
+
+      <div class="container app-grid">
+        <!-- Left: Account / profile -->
+        <aside class="panel" id="leftCard"></aside>
+
+        <!-- Right: Filters + Results -->
+        <section class="panel">
+          <div class="panel-head">
+            <div>
+              <div class="panel-title" id="resultsTitle">Katalog</div>
+              <div class="muted small" id="matchHint"></div>
+            </div>
+
+            <div class="panel-actions">
+              <button class="btn secondary" id="btnReset" type="button">Rensa filter</button>
+              <button class="btn" id="btnRun" type="button">Uppdatera resultat</button>
+            </div>
+          </div>
+
+          <div class="filters">
+            <div class="form-grid">
+              <label>
+                Ras
+                <select id="filterBreed">
+                  <option value="">Alla</option>
+                  <option value="SWB">SWB</option>
+                  <option value="KWPN">KWPN</option>
+                  <option value="HOLST">Holsteiner</option>
+                  <option value="HANN">Hannoveraner</option>
+                  <option value="OTHER">Övrigt</option>
+                </select>
+              </label>
+
+              <label>
+                Disciplin
+                <select id="filterDiscipline">
+                  <option value="">Alla</option>
+                  <option value="dressage">Dressyr</option>
+                  <option value="jumping">Hoppning</option>
+                  <option value="eventing">Fälttävlan</option>
+                  <option value="allround">Allround</option>
+                </select>
+              </label>
+
+              <label>
+                Tillgänglig nu
+                <select id="filterAvailable">
+                  <option value="">Alla</option>
+                  <option value="true">Ja</option>
+                  <option value="false">Nej</option>
+                </select>
+              </label>
+
+              <label>
+                Region
+                <select id="filterRegion">
+                  <option value="">Alla</option>
+                  <option value="SE">Sverige</option>
+                  <option value="EU">EU</option>
+                  <option value="INT">Internationellt</option>
+                </select>
+              </label>
+
+              <label>
+                Semin
+                <select id="filterSemen">
+                  <option value="">Alla</option>
+                  <option value="fresh">Färsk</option>
+                  <option value="frozen">Fryst</option>
+                  <option value="both">Båda</option>
+                </select>
+              </label>
+
+              <label>
+                3-årstest (hingst)
+                <select id="filter3yr">
+                  <option value="">Alla</option>
+                  <option value="true">Ja</option>
+                  <option value="false">Nej</option>
+                </select>
+              </label>
+
+              <label>
+                Min avelsindex
+                <input id="filterMinIndex" type="number" min="50" max="200" placeholder="ex 120" />
+              </label>
+
+              <label>
+                Prestation
+                <select id="filterPerformance">
+                  <option value="">Alla</option>
+                  <option value="proven">Meriterad</option>
+                </select>
+              </label>
+
+              <label>
+                Min mankhöjd (cm)
+                <input id="filterMinHeight" type="number" min="140" max="190" placeholder="ex 165" />
+              </label>
+
+              <label>
+                Max mankhöjd (cm)
+                <input id="filterMaxHeight" type="number" min="140" max="190" placeholder="ex 175" />
+              </label>
+
+              <label class="wide">
+                Sök (namn / härstamning)
+                <input id="filterSearch" type="text" placeholder="ex: Donnerhall, Cornet, Jovial..." />
+              </label>
+            </div>
+          </div>
+
+          <div class="results-head">
+            <div class="muted small" id="resultMeta"></div>
+          </div>
+
+          <div id="results" class="results"></div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="muted small">© EquiMatch (MVP). Built for school project — demo data only.</div>
+      <a class="muted small" href="#top">Back to top</a>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
