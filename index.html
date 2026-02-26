@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Equimatch — Stallion Matching</title>
+  <meta name="description" content="Equimatch hjälper stoägare att hitta rätt hingst med fokus på blodslinjer, prestation, fertilitet och tillgänglighet." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="#top">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-name">EQUIMATCH</span>
+        </a>
+
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="#how">Så funkar det</a>
+          <a href="#stallions">Hingstar</a>
+          <a href="#pricing">Pris</a>
+          <a href="#about">Om</a>
+          <a class="btn btn-primary" href="#match">Matcha nu</a>
+        </nav>
+
+        <button class="nav-toggle" aria-label="Öppna meny" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+      <div class="nav-mobile" hidden>
+        <a href="#how">Så funkar det</a>
+        <a href="#stallions">Hingstar</a>
+        <a href="#pricing">Pris</a>
+        <a href="#about">Om</a>
+        <a class="btn btn-primary" href="#match">Matcha nu</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-media" data-hero-image="images/hero-stallion.jpg" data-hero-fallback="images/stallion-1.jpg">
+        <div class="container">
+          <div class="hero-inner">
+            <div class="hero-copy">
+              <p class="eyebrow">Burgundy editorial • Equestrian credibility</p>
+              <h1>Matcha ditt sto med rätt hingst — med lugn och precision.</h1>
+              <p class="lead">
+                Blodslinjer, prestation, fertilitet och tillgänglighet i ett och samma verktyg.
+                Designat för seriösa uppfödare — inte för “app-brus”.
+              </p>
+
+              <div class="hero-cta">
+                <a class="btn btn-primary" href="#match">Starta matchning</a>
+                <a class="btn btn-ghost" href="#stallions">Bläddra hingstar</a>
+              </div>
+
+              <div class="hero-proof" aria-label="Highlights">
+                <div class="proof-item">
+                  <div class="proof-value">Avel</div>
+                  <div class="proof-label">Stambok + index</div>
+                </div>
+                <div class="proof-item">
+                  <div class="proof-value">Säsong</div>
+                  <div class="proof-label">Färsk / kyld / fryst</div>
+                </div>
+                <div class="proof-item">
+                  <div class="proof-value">Genetik</div>
+                  <div class="proof-label">Färg (beta)</div>
+                </div>
+              </div>
+            </div>
+
+            <aside class="hero-card" aria-label="Equimatch snapshot">
+              <div class="hero-card-top">
+                <div class="hero-card-title">Equimatch</div>
+                <div class="hero-card-chip">Premium • Luftig</div>
+              </div>
+              <div class="hero-card-body">
+                <div class="mini-row">
+                  <span class="mini-label">Fokus</span>
+                  <span class="mini-value">Varmblod</span>
+                </div>
+                <div class="mini-row">
+                  <span class="mini-label">Mål</span>
+                  <span class="mini-value">Bättre match</span>
+                </div>
+                <div class="mini-row">
+                  <span class="mini-label">Filter</span>
+                  <span class="mini-value">Tydliga val</span>
+                </div>
+                <div class="mini-row">
+                  <span class="mini-label">Resultat</span>
+                  <span class="mini-value">Katalog-känsla</span>
+                </div>
+              </div>
+              <div class="hero-card-foot">
+                <span class="small-note">Hint: minimal text, maximalt förtroende.</span>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+
+      <!-- Match panel -->
+      <div class="container match-panel" id="match">
+        <form class="panel" id="matchForm">
+          <div class="panel-head">
+            <h2 class="panel-title">Hitta bästa matchen</h2>
+            <p class="panel-sub">Börja enkelt. Förfina efteråt.</p>
+          </div>
+
+          <div class="form-grid">
+            <div class="field">
+              <label for="studbook">Stambok</label>
+              <select id="studbook" name="studbook">
+                <option value="SWB">SWB</option>
+                <option value="KWPN">KWPN</option>
+                <option value="Holsteiner">Holsteiner</option>
+                <option value="Hannoveraner">Hannoveraner</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="discipline">Inriktning</label>
+              <select id="discipline" name="discipline">
+                <option value="Jumping">Hoppning</option>
+                <option value="Dressage">Dressyr</option>
+                <option value="Eventing">Fälttävlan</option>
+                <option value="Allround">Allround</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="height">Mankhöjd</label>
+              <select id="height" name="height">
+                <option value="160-165">160–165</option>
+                <option value="165-170" selected>165–170</option>
+                <option value="170+">170+</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="semen">Semin</label>
+              <select id="semen" name="semen">
+                <option value="Fresh">Färsk</option>
+                <option value="Chilled" selected>Kyld</option>
+                <option value="Frozen">Fryst</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="region">Region</label>
+              <select id="region" name="region">
+                <option value="Sweden" selected>Sverige</option>
+                <option value="EU">EU</option>
+                <option value="International">Internationellt</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="color">Färg (valfritt)</label>
+              <input id="color" name="color" placeholder="t.ex. undvik skimmel, gärna brun" />
+            </div>
+          </div>
+
+          <div class="panel-actions">
+            <button type="submit" class="btn btn-primary">Visa förslag</button>
+            <button type="button" class="btn btn-secondary" id="clearBtn">Rensa</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- How -->
+    <section class="section" id="how">
+      <div class="container">
+        <div class="section-head">
+          <h2>Seriöst, lugnt, trovärdigt.</h2>
+          <p>Equimatch kombinerar premium “editorial”-känsla med struktur som känns hemma i avelsvärlden.</p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <div class="card-top">
+              <div class="card-kicker">Blodslinjer</div>
+              <div class="card-dot" aria-hidden="true"></div>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Stamtavla & kompatibilitet</h3>
+              <p class="card-text">Jämför härstamning, egenskaper och match — utan att tappa “hästen” bakom datan.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-top">
+              <div class="card-kicker">Prestation</div>
+              <div class="card-dot" aria-hidden="true"></div>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Resultat & index</h3>
+              <p class="card-text">Tävlingsmeriter, tester och avelsvärden — strukturerat och lätt att ta till sig.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-top">
+              <div class="card-kicker">Säsong</div>
+              <div class="card-dot" aria-hidden="true"></div>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Tillgänglighet & logistik</h3>
+              <p class="card-text">Färsk/kyld/fryst, region, station — så du kan planera utan stress.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="trusted">
+          <span class="trusted-label">Passar för</span>
+          <div class="trusted-row" aria-label="Trusted by">
+            <span class="trusted-pill">Uppfödare</span>
+            <span class="trusted-pill">Stall</span>
+            <span class="trusted-pill">Stationer</span>
+            <span class="trusted-pill">Tränare</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stallions -->
+    <section class="section alt" id="stallions">
+      <div class="container">
+        <div class="section-head">
+          <h2>Exempelhingstar</h2>
+          <p>Mock-kort som du senare kopplar till din databas.</p>
+        </div>
+
+        <div class="stallion-grid" id="results"></div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="section" id="pricing">
+      <div class="container">
+        <div class="section-head">
+          <h2>Pris</h2>
+          <p>Starta enkelt, uppgradera när du behöver sparade jämförelser och djupare filter.</p>
+        </div>
+
+        <div class="pricing">
+          <div class="price-card">
+            <div class="price-top">
+              <h3>Free</h3>
+              <p class="price">0 kr</p>
+            </div>
+            <ul class="list">
+              <li>Bläddra hingstar</li>
+              <li>Grundfilter</li>
+              <li>Översikt tillgänglighet</li>
+            </ul>
+            <button class="btn btn-secondary" type="button">Börja</button>
+          </div>
+
+          <div class="price-card featured">
+            <div class="price-top">
+              <h3>Breeder</h3>
+              <p class="price">149 kr<span>/mån</span></p>
+            </div>
+            <ul class="list">
+              <li>Spara ston & jämförelser</li>
+              <li>Kompatibilitetspoäng</li>
+              <li>Säsongsplanering</li>
+            </ul>
+            <button class="btn btn-primary" type="button">Starta</button>
+          </div>
+
+          <div class="price-card">
+            <div class="price-top">
+              <h3>Pro</h3>
+              <p class="price">399 kr<span>/mån</span></p>
+            </div>
+            <ul class="list">
+              <li>Avancerad genetik (beta)</li>
+              <li>Station/booking-flöde</li>
+              <li>Prioriterad support</li>
+            </ul>
+            <button class="btn btn-secondary" type="button">Kontakt</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section alt" id="about">
+      <div class="container">
+        <div class="section-head">
+          <h2>Om Equimatch</h2>
+          <p>Skapat för att göra ansvarstagande avel enklare — utan att förlora heritage och hjärta.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-card">
+            <h3>Trovärdighet först</h3>
+            <p>Struktur, lugn och tydliga val. Inga “säljiga” tricks.</p>
+          </div>
+          <div class="about-card">
+            <h3>Editorial — inte appigt</h3>
+            <p>Mycket luft + burgundytoner som känns premium och equestrian.</p>
+          </div>
+          <div class="about-card">
+            <h3>Byggbart</h3>
+            <p>Idag landing page, imorgon profiler, konto och match-historik.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div>
+          <div class="footer-brand">EQUIMATCH</div>
+          <p class="footer-note">Burgundy editorial • equestrian credibility • calm data.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#match">Match</a>
+          <a href="#stallions">Hingstar</a>
+          <a href="#pricing">Pris</a>
+          <a href="#about">Om</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
