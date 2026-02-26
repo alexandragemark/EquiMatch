@@ -2,337 +2,346 @@
 <html lang="sv">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>EquiMatch – Stallion Matching Platform (MVP)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Equimatch — Stallion Matching</title>
+  <meta name="description" content="Equimatch hjälper stoägare att hitta rätt hingst med fokus på blodslinjer, prestation, fertilitet och tillgänglighet." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <!-- Top bar -->
-  <header class="topbar">
-    <div class="container topbar-inner">
-      <a class="brand" href="#top">
-        <span class="logoMark"></span>
-        <span class="brandText">EquiMatch</span>
-        <span class="badge">MVP</span>
-      </a>
+  <header class="site-header">
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="#top">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-name">EQUIMATCH</span>
+        </a>
 
-      <nav class="topnav">
-        <a href="#how">How it works</a>
-        <a href="#forwho">For breeders</a>
-        <a href="#pricing">Pricing</a>
-        <button class="btn secondary" id="ctaOpenAppTop" type="button">Open demo</button>
-      </nav>
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="#how">Så funkar det</a>
+          <a href="#stallions">Hingstar</a>
+          <a href="#pricing">Pris</a>
+          <a href="#about">Om</a>
+          <a class="btn btn-primary" href="#match">Matcha nu</a>
+        </nav>
 
-      <div class="authMini" id="authMini"></div>
+        <button class="nav-toggle" aria-label="Öppna meny" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+      <div class="nav-mobile" hidden>
+        <a href="#how">Så funkar det</a>
+        <a href="#stallions">Hingstar</a>
+        <a href="#pricing">Pris</a>
+        <a href="#about">Om</a>
+        <a class="btn btn-primary" href="#match">Matcha nu</a>
+      </div>
     </div>
   </header>
 
-  <!-- LANDING -->
   <main id="top">
+    <!-- Hero -->
     <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <h1>European stallion matching — <span class="accent">simplified</span>.</h1>
-          <p class="lead">
-            A modern decision-support tool to filter, shortlist and compare stallions — and (later) add advanced matching & genetics as premium features.
-          </p>
+      <div class="hero-media" data-hero-image="images/hero-stallion.jpg" data-hero-fallback="images/stallion-1.jpg">
+        <div class="container">
+          <div class="hero-inner">
+            <div class="hero-copy">
+              <p class="eyebrow">Burgundy editorial • Equestrian credibility</p>
+              <h1>Matcha ditt sto med rätt hingst — med lugn och precision.</h1>
+              <p class="lead">
+                Blodslinjer, prestation, fertilitet och tillgänglighet i ett och samma verktyg.
+                Designat för seriösa uppfödare — inte för “app-brus”.
+              </p>
 
-          <div class="hero-cta">
-            <button class="btn" id="ctaCreateAccount" type="button">Create free account</button>
-            <button class="btn secondary" id="ctaOpenApp" type="button">Open demo</button>
-          </div>
-
-          <p class="muted small">
-            Stoägare kan skapa profil och lägga in ston gratis. Hingstägare kan senare betala för synlighet + leads.
-          </p>
-
-          <div class="trustRow">
-            <div class="trustItem">
-              <div class="trustTitle">Catalog</div>
-              <div class="muted small">Filter by discipline, region, semen, index, height.</div>
-            </div>
-            <div class="trustItem">
-              <div class="trustTitle">Match</div>
-              <div class="muted small">Shortlist built around a selected mare (formula later).</div>
-            </div>
-            <div class="trustItem">
-              <div class="trustTitle">Premium</div>
-              <div class="muted small">Genetics + deeper scoring (coming soon).</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="hero-card">
-          <div class="hero-card-top">
-            <div class="pill">Demo preview</div>
-            <div class="pill ghost">20 demo stallions</div>
-          </div>
-
-          <div class="mock">
-            <div class="mockRow">
-              <div class="mockLabel">Discipline</div>
-              <div class="mockChip">Jumping</div>
-              <div class="mockChip">Dressage</div>
-              <div class="mockChip">Eventing</div>
-            </div>
-            <div class="mockRow">
-              <div class="mockLabel">Region</div>
-              <div class="mockChip">SE</div>
-              <div class="mockChip">EU</div>
-              <div class="mockChip">INT</div>
-            </div>
-            <div class="mockRow">
-              <div class="mockLabel">Height</div>
-              <div class="mockChip">Min 165</div>
-              <div class="mockChip">Max 175</div>
-            </div>
-
-            <div class="mockList">
-              <div class="mockItem">
-                <div class="mockName">Nordic Legend</div>
-                <div class="mockMeta muted small">SWB · Jumping · Index 147 · 170 cm</div>
+              <div class="hero-cta">
+                <a class="btn btn-primary" href="#match">Starta matchning</a>
+                <a class="btn btn-ghost" href="#stallions">Bläddra hingstar</a>
               </div>
-              <div class="mockItem">
-                <div class="mockName">Cornet Skyline</div>
-                <div class="mockMeta muted small">HOLST · Jumping · 1.50m · Frozen</div>
-              </div>
-              <div class="mockItem">
-                <div class="mockName">Quiet Rebel</div>
-                <div class="mockMeta muted small">KWPN · Dressage · MSV A</div>
+
+              <div class="hero-proof" aria-label="Highlights">
+                <div class="proof-item">
+                  <div class="proof-value">Avel</div>
+                  <div class="proof-label">Stambok + index</div>
+                </div>
+                <div class="proof-item">
+                  <div class="proof-value">Säsong</div>
+                  <div class="proof-label">Färsk / kyld / fryst</div>
+                </div>
+                <div class="proof-item">
+                  <div class="proof-value">Genetik</div>
+                  <div class="proof-label">Färg (beta)</div>
+                </div>
               </div>
             </div>
 
-            <button class="btn full" id="ctaOpenAppCard" type="button">Try the demo</button>
+            <aside class="hero-card" aria-label="Equimatch snapshot">
+              <div class="hero-card-top">
+                <div class="hero-card-title">Equimatch</div>
+                <div class="hero-card-chip">Premium • Luftig</div>
+              </div>
+              <div class="hero-card-body">
+                <div class="mini-row">
+                  <span class="mini-label">Fokus</span>
+                  <span class="mini-value">Varmblod</span>
+                </div>
+                <div class="mini-row">
+                  <span class="mini-label">Mål</span>
+                  <span class="mini-value">Bättre match</span>
+                </div>
+                <div class="mini-row">
+                  <span class="mini-label">Filter</span>
+                  <span class="mini-value">Tydliga val</span>
+                </div>
+                <div class="mini-row">
+                  <span class="mini-label">Resultat</span>
+                  <span class="mini-value">Katalog-känsla</span>
+                </div>
+              </div>
+              <div class="hero-card-foot">
+                <span class="small-note">Hint: minimal text, maximalt förtroende.</span>
+              </div>
+            </aside>
           </div>
         </div>
       </div>
+
+      <!-- Match panel -->
+      <div class="container match-panel" id="match">
+        <form class="panel" id="matchForm">
+          <div class="panel-head">
+            <h2 class="panel-title">Hitta bästa matchen</h2>
+            <p class="panel-sub">Börja enkelt. Förfina efteråt.</p>
+          </div>
+
+          <div class="form-grid">
+            <div class="field">
+              <label for="studbook">Stambok</label>
+              <select id="studbook" name="studbook">
+                <option value="SWB">SWB</option>
+                <option value="KWPN">KWPN</option>
+                <option value="Holsteiner">Holsteiner</option>
+                <option value="Hannoveraner">Hannoveraner</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="discipline">Inriktning</label>
+              <select id="discipline" name="discipline">
+                <option value="Jumping">Hoppning</option>
+                <option value="Dressage">Dressyr</option>
+                <option value="Eventing">Fälttävlan</option>
+                <option value="Allround">Allround</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="height">Mankhöjd</label>
+              <select id="height" name="height">
+                <option value="160-165">160–165</option>
+                <option value="165-170" selected>165–170</option>
+                <option value="170+">170+</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="semen">Semin</label>
+              <select id="semen" name="semen">
+                <option value="Fresh">Färsk</option>
+                <option value="Chilled" selected>Kyld</option>
+                <option value="Frozen">Fryst</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="region">Region</label>
+              <select id="region" name="region">
+                <option value="Sweden" selected>Sverige</option>
+                <option value="EU">EU</option>
+                <option value="International">Internationellt</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="color">Färg (valfritt)</label>
+              <input id="color" name="color" placeholder="t.ex. undvik skimmel, gärna brun" />
+            </div>
+          </div>
+
+          <div class="panel-actions">
+            <button type="submit" class="btn btn-primary">Visa förslag</button>
+            <button type="button" class="btn btn-secondary" id="clearBtn">Rensa</button>
+          </div>
+        </form>
+      </div>
     </section>
 
+    <!-- How -->
     <section class="section" id="how">
       <div class="container">
-        <h2>How it works</h2>
-        <div class="cards3">
-          <div class="card">
-            <h3>1) Create a profile</h3>
-            <p class="muted">Stoägare: add mares for free. Hingstägare: later pay for visibility + leads.</p>
-          </div>
-          <div class="card">
-            <h3>2) Use as a catalog</h3>
-            <p class="muted">Filter by discipline, semen type, region, index, 3-year test and height interval.</p>
-          </div>
-          <div class="card">
-            <h3>3) Build a shortlist</h3>
-            <p class="muted">Switch to Match mode to shortlist around a selected mare (scoring formula later).</p>
+        <div class="section-head">
+          <h2>Seriöst, lugnt, trovärdigt.</h2>
+          <p>Equimatch kombinerar premium “editorial”-känsla med struktur som känns hemma i avelsvärlden.</p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <div class="card-top">
+              <div class="card-kicker">Blodslinjer</div>
+              <div class="card-dot" aria-hidden="true"></div>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Stamtavla & kompatibilitet</h3>
+              <p class="card-text">Jämför härstamning, egenskaper och match — utan att tappa “hästen” bakom datan.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-top">
+              <div class="card-kicker">Prestation</div>
+              <div class="card-dot" aria-hidden="true"></div>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Resultat & index</h3>
+              <p class="card-text">Tävlingsmeriter, tester och avelsvärden — strukturerat och lätt att ta till sig.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-top">
+              <div class="card-kicker">Säsong</div>
+              <div class="card-dot" aria-hidden="true"></div>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Tillgänglighet & logistik</h3>
+              <p class="card-text">Färsk/kyld/fryst, region, station — så du kan planera utan stress.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="trusted">
+          <span class="trusted-label">Passar för</span>
+          <div class="trusted-row" aria-label="Trusted by">
+            <span class="trusted-pill">Uppfödare</span>
+            <span class="trusted-pill">Stall</span>
+            <span class="trusted-pill">Stationer</span>
+            <span class="trusted-pill">Tränare</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="forwho">
+    <!-- Stallions -->
+    <section class="section alt" id="stallions">
       <div class="container">
-        <h2>Built for two user types</h2>
-
-        <div class="split">
-          <div class="card">
-            <div class="pill">Mare owners</div>
-            <h3>Free profile + mare library</h3>
-            <ul class="list">
-              <li>Add multiple mares</li>
-              <li>Catalog filtering</li>
-              <li>Match shortlist (MVP)</li>
-              <li>Save mare 3-year test details (not used yet)</li>
-            </ul>
-            <button class="btn" id="ctaCreateAccount2" type="button">Create free account</button>
-          </div>
-
-          <div class="card">
-            <div class="pill ghost">Stallion owners</div>
-            <h3>Paid visibility + leads (future)</h3>
-            <ul class="list">
-              <li>Pay to appear in catalog & match</li>
-              <li>Featured placement</li>
-              <li>Lead inbox + analytics</li>
-              <li>Semen availability updates</li>
-            </ul>
-            <button class="btn secondary" id="ctaOpenApp2" type="button">View demo</button>
-          </div>
+        <div class="section-head">
+          <h2>Exempelhingstar</h2>
+          <p>Mock-kort som du senare kopplar till din databas.</p>
         </div>
+
+        <div class="stallion-grid" id="results"></div>
       </div>
     </section>
 
+    <!-- Pricing -->
     <section class="section" id="pricing">
       <div class="container">
-        <h2>Pricing (concept)</h2>
-        <p class="muted">Pricing is placeholder for your school project — just to show the business model.</p>
-
-        <div class="cards3">
-          <div class="card">
-            <div class="pill">Free</div>
-            <h3>Breeders</h3>
-            <p class="muted">Mare profiles + catalog filters + basic shortlist.</p>
-          </div>
-          <div class="card">
-            <div class="pill ghost">Pro</div>
-            <h3>Premium breeder</h3>
-            <p class="muted">Advanced filters + saved shortlists + export reports.</p>
-          </div>
-          <div class="card">
-            <div class="pill ghost">Stud Farm</div>
-            <h3>Stallion owner</h3>
-            <p class="muted">Visibility, featured listings, lead tools & analytics.</p>
-          </div>
+        <div class="section-head">
+          <h2>Pris</h2>
+          <p>Starta enkelt, uppgradera när du behöver sparade jämförelser och djupare filter.</p>
         </div>
 
-        <div class="ctaRow">
-          <button class="btn" id="ctaCreateAccount3" type="button">Create account</button>
-          <button class="btn secondary" id="ctaOpenApp3" type="button">Open demo</button>
+        <div class="pricing">
+          <div class="price-card">
+            <div class="price-top">
+              <h3>Free</h3>
+              <p class="price">0 kr</p>
+            </div>
+            <ul class="list">
+              <li>Bläddra hingstar</li>
+              <li>Grundfilter</li>
+              <li>Översikt tillgänglighet</li>
+            </ul>
+            <button class="btn btn-secondary" type="button">Börja</button>
+          </div>
+
+          <div class="price-card featured">
+            <div class="price-top">
+              <h3>Breeder</h3>
+              <p class="price">149 kr<span>/mån</span></p>
+            </div>
+            <ul class="list">
+              <li>Spara ston & jämförelser</li>
+              <li>Kompatibilitetspoäng</li>
+              <li>Säsongsplanering</li>
+            </ul>
+            <button class="btn btn-primary" type="button">Starta</button>
+          </div>
+
+          <div class="price-card">
+            <div class="price-top">
+              <h3>Pro</h3>
+              <p class="price">399 kr<span>/mån</span></p>
+            </div>
+            <ul class="list">
+              <li>Avancerad genetik (beta)</li>
+              <li>Station/booking-flöde</li>
+              <li>Prioriterad support</li>
+            </ul>
+            <button class="btn btn-secondary" type="button">Kontakt</button>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- APP SECTION -->
-    <section class="app" id="app">
-      <div class="container app-head">
+    <!-- About -->
+    <section class="section alt" id="about">
+      <div class="container">
+        <div class="section-head">
+          <h2>Om Equimatch</h2>
+          <p>Skapat för att göra ansvarstagande avel enklare — utan att förlora heritage och hjärta.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-card">
+            <h3>Trovärdighet först</h3>
+            <p>Struktur, lugn och tydliga val. Inga “säljiga” tricks.</p>
+          </div>
+          <div class="about-card">
+            <h3>Editorial — inte appigt</h3>
+            <p>Mycket luft + burgundytoner som känns premium och equestrian.</p>
+          </div>
+          <div class="about-card">
+            <h3>Byggbart</h3>
+            <p>Idag landing page, imorgon profiler, konto och match-historik.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer-inner">
         <div>
-          <h2>Demo app</h2>
-          <p class="muted small">Resultat visas först när du klickar “Uppdatera resultat”.</p>
+          <div class="footer-brand">EQUIMATCH</div>
+          <p class="footer-note">Burgundy editorial • equestrian credibility • calm data.</p>
         </div>
-
-        <div class="tabs">
-          <button class="tab active" id="tabCatalog" type="button">Catalog</button>
-          <button class="tab" id="tabMatch" type="button">Match</button>
+        <div class="footer-links">
+          <a href="#match">Match</a>
+          <a href="#stallions">Hingstar</a>
+          <a href="#pricing">Pris</a>
+          <a href="#about">Om</a>
         </div>
       </div>
-
-      <div class="container app-grid">
-        <!-- Left: Account / profile -->
-        <aside class="panel" id="leftCard"></aside>
-
-        <!-- Right: Filters + Results -->
-        <section class="panel">
-          <div class="panel-head">
-            <div>
-              <div class="panel-title" id="resultsTitle">Katalog</div>
-              <div class="muted small" id="matchHint"></div>
-            </div>
-
-            <div class="panel-actions">
-              <button class="btn secondary" id="btnReset" type="button">Rensa filter</button>
-              <button class="btn" id="btnRun" type="button">Uppdatera resultat</button>
-            </div>
-          </div>
-
-          <div class="filters">
-            <div class="form-grid">
-              <label>
-                Ras
-                <select id="filterBreed">
-                  <option value="">Alla</option>
-                  <option value="SWB">SWB</option>
-                  <option value="KWPN">KWPN</option>
-                  <option value="HOLST">Holsteiner</option>
-                  <option value="HANN">Hannoveraner</option>
-                  <option value="OTHER">Övrigt</option>
-                </select>
-              </label>
-
-              <label>
-                Disciplin
-                <select id="filterDiscipline">
-                  <option value="">Alla</option>
-                  <option value="dressage">Dressyr</option>
-                  <option value="jumping">Hoppning</option>
-                  <option value="eventing">Fälttävlan</option>
-                  <option value="allround">Allround</option>
-                </select>
-              </label>
-
-              <label>
-                Tillgänglig nu
-                <select id="filterAvailable">
-                  <option value="">Alla</option>
-                  <option value="true">Ja</option>
-                  <option value="false">Nej</option>
-                </select>
-              </label>
-
-              <label>
-                Region
-                <select id="filterRegion">
-                  <option value="">Alla</option>
-                  <option value="SE">Sverige</option>
-                  <option value="EU">EU</option>
-                  <option value="INT">Internationellt</option>
-                </select>
-              </label>
-
-              <label>
-                Semin
-                <select id="filterSemen">
-                  <option value="">Alla</option>
-                  <option value="fresh">Färsk</option>
-                  <option value="frozen">Fryst</option>
-                  <option value="both">Båda</option>
-                </select>
-              </label>
-
-              <label>
-                3-årstest (hingst)
-                <select id="filter3yr">
-                  <option value="">Alla</option>
-                  <option value="true">Ja</option>
-                  <option value="false">Nej</option>
-                </select>
-              </label>
-
-              <label>
-                Min avelsindex
-                <input id="filterMinIndex" type="number" min="50" max="200" placeholder="ex 120" />
-              </label>
-
-              <label>
-                Prestation
-                <select id="filterPerformance">
-                  <option value="">Alla</option>
-                  <option value="proven">Meriterad</option>
-                </select>
-              </label>
-
-              <label>
-                Min mankhöjd (cm)
-                <input id="filterMinHeight" type="number" min="140" max="190" placeholder="ex 165" />
-              </label>
-
-              <label>
-                Max mankhöjd (cm)
-                <input id="filterMaxHeight" type="number" min="140" max="190" placeholder="ex 175" />
-              </label>
-
-              <label class="wide">
-                Sök (namn / härstamning)
-                <input id="filterSearch" type="text" placeholder="ex: Donnerhall, Cornet, Jovial..." />
-              </label>
-            </div>
-          </div>
-
-          <div class="results-head">
-            <div class="muted small" id="resultMeta"></div>
-          </div>
-
-          <div id="results" class="results"></div>
-        </section>
-      </div>
-    </section>
+    </footer>
   </main>
 
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div class="muted small">© EquiMatch (MVP). Built for school project — demo data only.</div>
-      <a class="muted small" href="#top">Back to top</a>
-    </div>
-  </footer>
-
-  <script src="app.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
