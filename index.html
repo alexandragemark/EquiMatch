@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Equimatch — Stallion Matching</title>
-  <meta name="description" content="Equimatch hjälper stoägare att hitta rätt hingst med fokus på blodslinjer, prestation, fertilitet och tillgänglighet." />
+  <meta name="description" content="Matcha ditt sto med rätt hingst. Blodslinjer, prestation, fertilitet och tillgänglighet — i ett och samma verktyg." />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,6 +15,7 @@
 </head>
 
 <body>
+  <!-- Header -->
   <header class="site-header">
     <div class="container">
       <div class="nav">
@@ -28,7 +29,16 @@
           <a href="#stallions">Hingstar</a>
           <a href="#pricing">Pris</a>
           <a href="#about">Om</a>
-          <a class="btn btn-primary" href="#match">Matcha nu</a>
+
+          <!-- Logged out -->
+          <button class="btn btn-secondary" id="loginBtn">Logga in / Skapa konto</button>
+
+          <!-- Logged in -->
+          <div class="user-menu hidden" id="userMenu">
+            <span class="user-pill" id="userPill">Inloggad</span>
+            <a class="btn btn-primary" href="#dashboard" id="toDashboardBtn">Dashboard</a>
+            <button class="btn btn-secondary" id="logoutBtn">Logga ut</button>
+          </div>
         </nav>
 
         <button class="nav-toggle" aria-label="Öppna meny" aria-expanded="false">
@@ -36,18 +46,24 @@
         </button>
       </div>
 
-      <div class="nav-mobile" hidden>
+      <div class="nav-mobile" hidden id="navMobile">
         <a href="#how">Så funkar det</a>
         <a href="#stallions">Hingstar</a>
         <a href="#pricing">Pris</a>
         <a href="#about">Om</a>
-        <a class="btn btn-primary" href="#match">Matcha nu</a>
+        <button class="btn btn-secondary" id="loginBtnMobile">Logga in / Skapa konto</button>
+
+        <div class="user-menu hidden" id="userMenuMobile">
+          <span class="user-pill" id="userPillMobile">Inloggad</span>
+          <a class="btn btn-primary" href="#dashboard">Dashboard</a>
+          <button class="btn btn-secondary" id="logoutBtnMobile">Logga ut</button>
+        </div>
       </div>
     </div>
   </header>
 
   <main id="top">
-    <!-- Hero -->
+    <!-- HERO / LANDING -->
     <section class="hero">
       <div class="hero-media" data-hero-image="images/hero-stallion.jpg" data-hero-fallback="images/stallion-1.jpg">
         <div class="container">
@@ -57,11 +73,11 @@
               <h1>Matcha ditt sto med rätt hingst — med lugn och precision.</h1>
               <p class="lead">
                 Blodslinjer, prestation, fertilitet och tillgänglighet i ett och samma verktyg.
-                Designat för seriösa uppfödare — inte för “app-brus”.
+                Byggt för seriösa uppfödare — inte “app-brus”.
               </p>
 
               <div class="hero-cta">
-                <a class="btn btn-primary" href="#match">Starta matchning</a>
+                <button class="btn btn-primary" id="ctaStart">Starta matchning</button>
                 <a class="btn btn-ghost" href="#stallions">Bläddra hingstar</a>
               </div>
 
@@ -88,107 +104,37 @@
               </div>
               <div class="hero-card-body">
                 <div class="mini-row">
-                  <span class="mini-label">Fokus</span>
-                  <span class="mini-value">Varmblod</span>
+                  <span class="mini-label">Steg 1</span>
+                  <span class="mini-value">Logga in</span>
                 </div>
                 <div class="mini-row">
-                  <span class="mini-label">Mål</span>
-                  <span class="mini-value">Bättre match</span>
+                  <span class="mini-label">Steg 2</span>
+                  <span class="mini-value">Lägg till sto</span>
                 </div>
                 <div class="mini-row">
-                  <span class="mini-label">Filter</span>
-                  <span class="mini-value">Tydliga val</span>
+                  <span class="mini-label">Steg 3</span>
+                  <span class="mini-value">Matcha hingstar</span>
                 </div>
                 <div class="mini-row">
-                  <span class="mini-label">Resultat</span>
-                  <span class="mini-value">Katalog-känsla</span>
+                  <span class="mini-label">Känsla</span>
+                  <span class="mini-value">Katalog • Trovärdigt</span>
                 </div>
               </div>
               <div class="hero-card-foot">
-                <span class="small-note">Hint: minimal text, maximalt förtroende.</span>
+                <span class="small-note">Tydlig CTA — verktyget öppnas efter inloggning.</span>
               </div>
             </aside>
           </div>
         </div>
       </div>
-
-      <!-- Match panel -->
-      <div class="container match-panel" id="match">
-        <form class="panel" id="matchForm">
-          <div class="panel-head">
-            <h2 class="panel-title">Hitta bästa matchen</h2>
-            <p class="panel-sub">Börja enkelt. Förfina efteråt.</p>
-          </div>
-
-          <div class="form-grid">
-            <div class="field">
-              <label for="studbook">Stambok</label>
-              <select id="studbook" name="studbook">
-                <option value="SWB">SWB</option>
-                <option value="KWPN">KWPN</option>
-                <option value="Holsteiner">Holsteiner</option>
-                <option value="Hannoveraner">Hannoveraner</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-
-            <div class="field">
-              <label for="discipline">Inriktning</label>
-              <select id="discipline" name="discipline">
-                <option value="Jumping">Hoppning</option>
-                <option value="Dressage">Dressyr</option>
-                <option value="Eventing">Fälttävlan</option>
-                <option value="Allround">Allround</option>
-              </select>
-            </div>
-
-            <div class="field">
-              <label for="height">Mankhöjd</label>
-              <select id="height" name="height">
-                <option value="160-165">160–165</option>
-                <option value="165-170" selected>165–170</option>
-                <option value="170+">170+</option>
-              </select>
-            </div>
-
-            <div class="field">
-              <label for="semen">Semin</label>
-              <select id="semen" name="semen">
-                <option value="Fresh">Färsk</option>
-                <option value="Chilled" selected>Kyld</option>
-                <option value="Frozen">Fryst</option>
-              </select>
-            </div>
-
-            <div class="field">
-              <label for="region">Region</label>
-              <select id="region" name="region">
-                <option value="Sweden" selected>Sverige</option>
-                <option value="EU">EU</option>
-                <option value="International">Internationellt</option>
-              </select>
-            </div>
-
-            <div class="field">
-              <label for="color">Färg (valfritt)</label>
-              <input id="color" name="color" placeholder="t.ex. undvik skimmel, gärna brun" />
-            </div>
-          </div>
-
-          <div class="panel-actions">
-            <button type="submit" class="btn btn-primary">Visa förslag</button>
-            <button type="button" class="btn btn-secondary" id="clearBtn">Rensa</button>
-          </div>
-        </form>
-      </div>
     </section>
 
-    <!-- How -->
+    <!-- HOW -->
     <section class="section" id="how">
       <div class="container">
         <div class="section-head">
           <h2>Seriöst, lugnt, trovärdigt.</h2>
-          <p>Equimatch kombinerar premium “editorial”-känsla med struktur som känns hemma i avelsvärlden.</p>
+          <p>Equimatch kombinerar premium editorial-känsla med struktur som känns hemma i avelsvärlden.</p>
         </div>
 
         <div class="cards">
@@ -238,19 +184,23 @@
       </div>
     </section>
 
-    <!-- Stallions -->
+    <!-- STALLIONS (public preview) -->
     <section class="section alt" id="stallions">
       <div class="container">
         <div class="section-head">
-          <h2>Exempelhingstar</h2>
-          <p>Mock-kort som du senare kopplar till din databas.</p>
+          <h2>Hingstar (preview)</h2>
+          <p>Exempel för landningssidan — full matchning finns efter inloggning.</p>
         </div>
 
-        <div class="stallion-grid" id="results"></div>
+        <div class="stallion-grid" id="publicStallions"></div>
+
+        <div class="center-cta">
+          <button class="btn btn-primary" id="ctaLoginBottom">Logga in för att matcha</button>
+        </div>
       </div>
     </section>
 
-    <!-- Pricing -->
+    <!-- PRICING -->
     <section class="section" id="pricing">
       <div class="container">
         <div class="section-head">
@@ -265,11 +215,11 @@
               <p class="price">0 kr</p>
             </div>
             <ul class="list">
-              <li>Bläddra hingstar</li>
+              <li>Preview av hingstar</li>
               <li>Grundfilter</li>
-              <li>Översikt tillgänglighet</li>
+              <li>En (1) sto-profil</li>
             </ul>
-            <button class="btn btn-secondary" type="button">Börja</button>
+            <button class="btn btn-secondary" type="button" id="ctaFree">Börja</button>
           </div>
 
           <div class="price-card featured">
@@ -278,11 +228,11 @@
               <p class="price">149 kr<span>/mån</span></p>
             </div>
             <ul class="list">
-              <li>Spara ston & jämförelser</li>
+              <li>Flera ston</li>
               <li>Kompatibilitetspoäng</li>
-              <li>Säsongsplanering</li>
+              <li>Sparade matcher</li>
             </ul>
-            <button class="btn btn-primary" type="button">Starta</button>
+            <button class="btn btn-primary" type="button" id="ctaBreeder">Starta</button>
           </div>
 
           <div class="price-card">
@@ -295,13 +245,13 @@
               <li>Station/booking-flöde</li>
               <li>Prioriterad support</li>
             </ul>
-            <button class="btn btn-secondary" type="button">Kontakt</button>
+            <button class="btn btn-secondary" type="button" id="ctaPro">Kontakt</button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- About -->
+    <!-- ABOUT -->
     <section class="section alt" id="about">
       <div class="container">
         <div class="section-head">
@@ -320,7 +270,140 @@
           </div>
           <div class="about-card">
             <h3>Byggbart</h3>
-            <p>Idag landing page, imorgon profiler, konto och match-historik.</p>
+            <p>Landing page → dashboard → profiler → match-historik.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DASHBOARD (only after login) -->
+    <section class="section dashboard hidden" id="dashboard">
+      <div class="container">
+        <div class="dash-head">
+          <div>
+            <h2>Dashboard</h2>
+            <p class="dash-sub">Här skapar du sto-profiler och gör matchningar.</p>
+          </div>
+          <div class="dash-actions">
+            <button class="btn btn-secondary" id="resetDemoBtn">Återställ demo</button>
+          </div>
+        </div>
+
+        <div class="dash-grid">
+          <!-- Mares -->
+          <div class="dash-card">
+            <div class="dash-card-top">
+              <h3>Mina ston</h3>
+              <p>Lägg till sto för att matcha.</p>
+            </div>
+
+            <form class="mare-form" id="mareForm">
+              <div class="two">
+                <div class="field">
+                  <label for="mareName">Namn</label>
+                  <input id="mareName" name="mareName" placeholder="t.ex. Magnolia" required />
+                </div>
+                <div class="field">
+                  <label for="mareStudbook">Stambok</label>
+                  <select id="mareStudbook" name="mareStudbook">
+                    <option value="SWB">SWB</option>
+                    <option value="KWPN">KWPN</option>
+                    <option value="Holsteiner">Holsteiner</option>
+                    <option value="Hannoveraner">Hannoveraner</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="two">
+                <div class="field">
+                  <label for="mareDiscipline">Inriktning</label>
+                  <select id="mareDiscipline" name="mareDiscipline">
+                    <option value="Jumping">Hoppning</option>
+                    <option value="Dressage">Dressyr</option>
+                    <option value="Eventing">Fälttävlan</option>
+                    <option value="Allround">Allround</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="mareHeight">Mankhöjd</label>
+                  <select id="mareHeight" name="mareHeight">
+                    <option value="160-165">160–165</option>
+                    <option value="165-170" selected>165–170</option>
+                    <option value="170+">170+</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="two">
+                <div class="field">
+                  <label for="mareColor">Färg</label>
+                  <input id="mareColor" name="mareColor" placeholder="t.ex. brun / fux / skimmel" />
+                </div>
+                <div class="field">
+                  <label for="mareNotes">Notering</label>
+                  <input id="mareNotes" name="mareNotes" placeholder="t.ex. vill ha mer galopp" />
+                </div>
+              </div>
+
+              <div class="panel-actions">
+                <button class="btn btn-primary" type="submit">Lägg till sto</button>
+              </div>
+            </form>
+
+            <div class="mares-list" id="maresList" aria-label="Mares list"></div>
+          </div>
+
+          <!-- Match -->
+          <div class="dash-card">
+            <div class="dash-card-top">
+              <h3>Matcha</h3>
+              <p>Välj sto och filtrera på säsong/region — sedan “Visa förslag”.</p>
+            </div>
+
+            <form class="match-form" id="matchForm">
+              <div class="form-grid one">
+                <div class="field">
+                  <label for="mareSelect">Sto</label>
+                  <select id="mareSelect" name="mareSelect"></select>
+                </div>
+
+                <div class="field">
+                  <label for="semen">Semin</label>
+                  <select id="semen" name="semen">
+                    <option value="Fresh">Färsk</option>
+                    <option value="Chilled" selected>Kyld</option>
+                    <option value="Frozen">Fryst</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label for="region">Region</label>
+                  <select id="region" name="region">
+                    <option value="Sweden" selected>Sverige</option>
+                    <option value="EU">EU</option>
+                    <option value="International">Internationellt</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label for="colorPref">Färgpreferens (valfritt)</label>
+                  <input id="colorPref" name="colorPref" placeholder="t.ex. undvik skimmel" />
+                </div>
+              </div>
+
+              <div class="panel-actions">
+                <button type="submit" class="btn btn-primary">Visa förslag</button>
+                <button type="button" class="btn btn-secondary" id="clearMatchBtn">Rensa</button>
+              </div>
+            </form>
+
+            <div class="results-head">
+              <h3>Förslag</h3>
+              <p class="muted">Mock-resultat (koppla till databas senare).</p>
+            </div>
+
+            <div class="stallion-grid" id="results"></div>
           </div>
         </div>
       </div>
@@ -333,7 +416,7 @@
           <p class="footer-note">Burgundy editorial • equestrian credibility • calm data.</p>
         </div>
         <div class="footer-links">
-          <a href="#match">Match</a>
+          <a href="#how">Så funkar det</a>
           <a href="#stallions">Hingstar</a>
           <a href="#pricing">Pris</a>
           <a href="#about">Om</a>
@@ -341,6 +424,37 @@
       </div>
     </footer>
   </main>
+
+  <!-- LOGIN MODAL -->
+  <div class="modal hidden" id="loginModal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+      <div class="modal-head">
+        <h2 id="loginTitle">Logga in / Skapa konto</h2>
+        <button class="icon-btn" id="closeModalBtn" aria-label="Stäng">✕</button>
+      </div>
+
+      <p class="modal-sub">Fake login (demo). Sparas lokalt i webbläsaren.</p>
+
+      <div class="field">
+        <label for="loginName">Namn</label>
+        <input id="loginName" placeholder="t.ex. Alexandra" />
+      </div>
+
+      <div class="field">
+        <label for="loginEmail">E-post</label>
+        <input id="loginEmail" placeholder="t.ex. alex@example.com" />
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn btn-primary" id="loginSubmitBtn">Fortsätt</button>
+        <button class="btn btn-secondary" id="cancelBtn">Avbryt</button>
+      </div>
+
+      <div class="fineprint">
+        <span>Efter inloggning låses dashboard upp där du kan lägga till ston och matcha.</span>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
